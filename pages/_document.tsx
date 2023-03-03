@@ -3,8 +3,6 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 const getInitialProps = createGetInitialProps();
 
-const links = [{link: '/', label: 'Home'}]
-
 export default class _Document extends Document {
   static getInitialProps = getInitialProps;
 
@@ -12,7 +10,7 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head />
-        <body>
+        <body style={{ backgroundColor: '#f1f5f9'}}>
             <Main />
             <NextScript />
         </body>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createStyles, Header, Container, Group, Burger, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -50,22 +52,28 @@ interface SimpleHeaderProps {
 }
 
 export default function SimpleHeader({ links }: SimpleHeaderProps) {
+  const { pathname } = useRouter()
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
+  useEffect(() => {
+    setActive(pathname)
+  }, [pathname])
+
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+      passHref
     >
-      {link.label}
-    </a>
+      <a
+        className={cx(classes.link, { [classes.linkActive]: active === link.link })}
+        onClick={() => setActive(link.link)}
+      >
+        {link.label}
+      </a>
+    </Link>
   ));
 
   return (
@@ -75,7 +83,6 @@ export default function SimpleHeader({ links }: SimpleHeaderProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-
         <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
       </Container>
     </Header>

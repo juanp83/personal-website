@@ -11,13 +11,18 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
-    "@mantine/core": "^5.4.2",
+    "@emotion/styled": "^11.10.5",
+    "@mantine/core": "^5.9.5",
     "@mantine/hooks": "^5.4.2",
     "@mantine/next": "^5.4.2",
     "@tabler/icons": "^1.114.0",
+    "date-fns": "^2.29.3",
+    "gray-matter": "^4.0.3",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1"
   },
   "devDependencies": {
     "@types/node": "18.7.23",
