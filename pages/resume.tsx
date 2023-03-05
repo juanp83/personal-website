@@ -104,7 +104,7 @@ const useStyles = createStyles((theme) => ({
     }
 }));
 
-export default function resume() {
+export default function Resume() {
     const { classes } = useStyles();
     return (
         <Container>
