@@ -7,50 +7,49 @@ import {
     Container,
     Image,
   } from '@mantine/core';
-  import { IconGauge, IconUser, IconCookie } from '@tabler/icons';
   
   const technologies = [
     {
         title: 'Javascript & TypeScript',
         description:
             '7 years of experience in Javascript and 1 year of experience in typescript.',
-        icon: '/icons/js-icon.png',
-        icon2: '/icons/ts-icon.png',
+        icon: {src: '/icons/js-icon.png', alt: 'Javascript Icon'},
+        icon2: {src: '/icons/ts-icon.png', alt: 'Typescript Icon'},
     },
     {
         title: 'React & Redux',
         description:
             '6 years of experience in React and 4 years of experience in Redux.',
-        icon: '/icons/react-icon.png',
-        icon2: '/icons/redux-icon.png',
+        icon: {src: '/icons/react-icon.png', alt: 'React Icon'},
+        icon2: {src: '/icons/redux-icon.png', alt: 'Redux Icon'},
     },
     {
         title: 'Styled Components & Emotion',
         description:
             '3 years of experience in Styled Components and 1 year of experience in Emotion.',
-        icon: '/icons/sc-icon.png',
-        icon2: '/icons/emotion-icon.png',
+        icon: {src: '/icons/sc-icon.png', alt: 'Styled Components Icon'},
+        icon2: {src: '/icons/emotion-icon.png', alt: 'Emotion Icon'}
     },
     {
         title: 'Material-UI & Bootstrap',
         description:
             '6 years of experience in Material-UI and 3 years of experience in Bootstrap.',
-        icon: '/icons/mui-icon.png',
-        icon2: '/icons/bootstrap-icon.png',
+        icon: {src: '/icons/mui-icon.png', alt: "Material UI Icon"},
+        icon2: {src: '/icons/bootstrap-icon.png', alt: 'Bootstrap Icon'},
     },
     {
         title: 'Jira & Github',
         description:
             '3 years of experience using Jira and 7 years of experience using Github.',
-        icon: '/icons/jira-icon.png',
-        icon2: '/icons/github-icon.png',
+        icon: {src: '/icons/jira-icon.png', alt: 'Jira Icon'},
+        icon2: {src: '/icons/github-icon.png', alt: 'Github Icon'}
     },
     {
         title: 'Figma & Photoshop',
         description:
             'I have used photoshop for decades, and figma for three years.',
-        icon: '/icons/figma-icon.png',
-        icon2: '/icons/ps-icon.png',
+        icon: {src: '/icons/figma-icon.png', alt: 'Figma Icon'},
+        icon2: {src: '/icons/ps-icon.png', alt: 'Photoshop'},
     },
   ];
   
@@ -111,8 +110,8 @@ import {
     const features = technologies.map((feature) => (
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
         <div style={{ display: 'flex' }}>
-            <Image src={feature.icon} width={50} style={{marginRight: '.5em'}} />
-            <Image src={feature.icon2} width={50} />
+            <Image src={feature.icon.src} width={50} style={{marginRight: '.5em'}} alt={feature.icon.alt} />
+            <Image src={feature.icon2.src} width={50} alt={feature.icon.alt} />
         </div>
         <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
           {feature.title}
