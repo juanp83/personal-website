@@ -3,11 +3,15 @@ import { IconBrandTwitter, IconBrandLinkedin, IconBrandGithub } from '@tabler/ic
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: 120,
+    marginTop: theme.spacing.xl * 4,
     backgroundColor: '#fff',
     borderTop: `1px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
+
+    [theme.fn.smallerThan('md')]: {
+      marginTop:  theme.spacing.xl * 2,
+    },
   },
 
   inner: {

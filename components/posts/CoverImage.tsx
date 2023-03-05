@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import React from 'react'
 
 type Props = {
   title: string
@@ -7,23 +8,32 @@ type Props = {
   slug?: string
 }
 
+
+
+
 const CoverImage = ({ title, src, slug }: Props) => {
-  const image = (
-    <Image
-      src={src}
-      alt={`Cover Image for ${title}`}
-      width={800}
-      height={532}
-    />
-  )
+  // eslint-disable-next-line react/display-name
+
   return (
     <div>
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
-          {image}
+          <a>
+            <Image
+              src={src}
+              alt={`Cover Image for ${title}`}
+              width={800}
+              height={532}
+            />
+          </a>
         </Link>
       ) : (
-        image
+        <Image
+          src={src}
+          alt={`Cover Image for ${title}`}
+          width={800}
+          height={532}
+        />
       )}
     </div>
   )

@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { createStyles, Header, Container, Group, Burger, Title } from '@mantine/core';
+import { createStyles, Header, Container, Group, Burger, Title, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   header: {
+    marginBottom:  theme.spacing.xl * 4,
+    [theme.fn.smallerThan('md')]: {
+      marginBottom:  theme.spacing.xl * 2,
+    },
+  },
+
+  headerContainer: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -77,13 +84,22 @@ export default function SimpleHeader({ links }: SimpleHeaderProps) {
   ));
 
   return (
-    <Header height={60} mb={120}>
-      <Container className={classes.header}>
+    <Header height={60} className={classes.header}>
+      <Container className={classes.headerContainer}>
         <Title order={1}>Juan Portillo</Title>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
-        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        <Menu shadow="md" width={200} opened={opened}>
+          <Menu.Target>
+            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+          </Menu.Target>
+
+          <Menu.Dropdown>
+            {items}
+          </Menu.Dropdown>
+        </Menu>
+        
       </Container>
     </Header>
   );

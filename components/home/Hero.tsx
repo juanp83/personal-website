@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   createStyles,
-  Image,
   Container,
   Title,
   Button,
   Group,
   Text,
 } from '@mantine/core';
+import Image from 'next/future/image';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
@@ -21,6 +21,9 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: '#fff',
     position: 'relative',
     borderRadius: theme.radius.sm,
+    [theme.fn.smallerThan('md')]: {
+      padding: theme.spacing.xl,
+    },
   },
 
   content: {
@@ -28,6 +31,10 @@ const useStyles = createStyles((theme) => ({
     marginRight: theme.spacing.xl * 3,
 
     [theme.fn.smallerThan('md')]: {
+      maxWidth: '65%',
+      marginRight: 0,
+    },
+    [theme.fn.smallerThan('sm')]: {
       maxWidth: '100%',
       marginRight: 0,
     },
@@ -56,6 +63,11 @@ const useStyles = createStyles((theme) => ({
     right: '-20px',
     bottom: 0,
     [theme.fn.smallerThan('md')]: {
+      width: 260,
+      right: 0,
+      height: 'auto',
+    },
+    [theme.fn.smallerThan('sm')]: {
       display: 'none',
     },
   },
@@ -73,43 +85,50 @@ export default function Hero() {
   const { classes } = useStyles();
   return (
     <Container>
-    <div className={classes.inner}>
+      <div className={classes.inner}>
         <div className={classes.content}>
-        <Title className={classes.title}>
-            Creative <span className={classes.highlight}>Front-End</span> <br />Software Engineer
-        </Title>
-        <Text color="dimmed" mt="md">
-            My interests in science and technology have always influenced my hobbies in tinkering, building, exploring and learning about emerging discoveries.
-        </Text> 
-        <Text color="dimmed" mt="md">
-            Ironically, I started my career in recruiting and HR. 🤦‍♂️ 
-        </Text> 
-        <Text color="dimmed" mt="md">
-            Learning to code made me realize that I could merge my people focused work with my interest in tech.
-            I enjoy working in a team, designing simple, elegant, responsive, and user friendly interfaces that bridge the gap between people and technology.
-        </Text> 
+          <Title className={classes.title}>
+              Creative <span className={classes.highlight}>Front-End</span> <br />Software Engineer
+          </Title>
+          <Text color="dimmed" mt="md">
+              My interests in science and technology have always influenced my hobbies in tinkering, building, exploring and learning about emerging discoveries.
+          </Text> 
+          <Text color="dimmed" mt="md">
+              Ironically, I started my career in recruiting and HR. 🤦‍♂️ 
+          </Text> 
+          <Text color="dimmed" mt="md">
+              Learning to code made me realize that I could merge my people focused work with my interest in tech.
+              I enjoy working in a team, designing simple, elegant, responsive, and user friendly interfaces that bridge the gap between people and technology.
+          </Text> 
 
-        <Group mt={30}>
-          <Link
-            href={`/resume`}
-            passHref
-          >
-            <Button radius="xl" size="md" className={classes.control}>
-              Resume
-            </Button>
-          </Link>
-          <Link
-            href={`/blog`}
-            passHref
-          >
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
-              Blog
-            </Button>
-          </Link>
-        </Group>
+          <Group mt={30}>
+            <Link
+              href={`/resume`}
+              passHref
+            >
+              <Button radius="xl" size="md" className={classes.control}>
+                Resume
+              </Button>
+            </Link>
+            <Link
+              href={`/blog`}
+              passHref
+            >
+              <Button variant="default" radius="xl" size="md" className={classes.control}>
+                Blog
+              </Button>
+            </Link>
+          </Group>
         </div>
-        <Image src={'/juan.webp'} width={300} className={classes.image} alt="Juan Portillo, Front-End Software Engineer"/>
-    </div>
+          <Image 
+            src={'/juan.webp'}
+            width={300}
+            height={537}
+            priority
+            className={classes.image}
+            alt="Juan Portillo, Front-End Software Engineer"
+          />
+      </div>
     </Container>
   )
 }

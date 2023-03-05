@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Container, Divider, Flex, List, Paper, Text, Title } from '@mantine/core'
+import { ActionIcon, Box, Container, createStyles, Divider, Flex, List, Paper, Text, Title } from '@mantine/core'
 import { IconPrinter } from '@tabler/icons';
 
 const jobs = [
@@ -74,56 +74,87 @@ const volunteerJobs = [
     },
 ]
 
-export default function resume() {
-  return (
-    <Container>
-        <Paper shadow="md" p="md" sx={{ position: 'relative' }}>
-        <ActionIcon
-            size="lg"
-            sx={{ position: 'absolute', right: 5, top: 5, color: '#4877ad'}}
-            variant="transparent"
-            onClick={() => window.open('/Juan Portillo - FrontEnd Engineer Resume.pdf')}
-        >
-            <IconPrinter size={26} />
-        </ActionIcon>
-            <Box sx={{ padding: "4em" }}>
-                <Flex align="center" direction="column">
-                    <Title order={1}>Juan Portillo</Title>
-                    <Title order={2} size="h4">Frontend Software Engineer</Title>
-                    <Text>Erie, CO | juanp.io | juan@juanp.io</Text>
-                </Flex>
-                <Divider my="sm" />
-                <Title order={3} size="h4" sx={{ marginBottom: "1em" }}>Work Experience</Title>
-                {jobs.map(job => (
-                    <Box key={job.company} sx={{ marginBottom: "1em" }}>
-                        <Flex direction="column" sx={{ marginLeft: '2em'}}>
-                            <Text>{job.company}</Text>
-                            <Text><strong>{job.title}</strong> | {job.dates}</Text>
-                            <Text>Technologies: {job.technologies}</Text>
-                            <List sx={{ marginLeft: '2em'}}>
-                                {job.duties.map(duty => <List.Item key={duty}>{duty}</List.Item>)}
-                            </List>
-                        </Flex>
-                    </Box>
-                ))}
-                <Title order={3} size="h4" sx={{ margin: "1em 0" }}>Education</Title>
-                {Schools.map(school => (
-                    <Text key={school.school} sx={{ marginLeft: '2em'}}>
-                        <strong>{school.school}</strong> - {school.degree} - Graduated {school.date}
-                    </Text>
-                ))}
-                <Title order={3} size="h4" sx={{ margin: "1em 0" }}>Volunteer work</Title>
-                {volunteerJobs.map(job => (
-                    <div key={job.job}>
-                        <Text sx={{ margin: '0 0 1em 2em'}}>
-                            <strong>{job.job}</strong><br/>
-                            {job.title} | {job.dates}<br />
-                            {job.duties}
+const useStyles = createStyles((theme) => ({
+    contentContainer: {
+      padding: '4em',
+      [theme.fn.smallerThan('md')]: {
+        padding: '1em',
+      },
+    },
+    paper: {
+        position: 'relative',
+    },
+    print: {
+        position: 'absolute',
+        right: 5,
+        top: 5,
+        color: '#4877ad'
+    },
+    jobContainer: { 
+        marginLeft: '2em',
+        [theme.fn.smallerThan('md')]: {
+            marginLeft: '1em',
+        },
+    },
+    jobList: { 
+        marginLeft: '2em',
+        [theme.fn.smallerThan('md')]: {
+            marginLeft: '1em',
+        },
+    }
+}));
+
+export default function Resume() {
+    const { classes } = useStyles();
+    return (
+        <Container>
+            <Paper shadow="md" p="md" className={classes.paper}>
+            <ActionIcon
+                size="lg"
+                className={classes.print}
+                variant="transparent"
+                onClick={() => window.open('/Juan Portillo - FrontEnd Engineer Resume.pdf')}
+            >
+                <IconPrinter size={26} />
+            </ActionIcon>
+                <Box className={classes.contentContainer}>
+                    <Flex align="center" direction="column">
+                        <Title order={1}>Juan Portillo</Title>
+                        <Title order={2} size="h4">Frontend Software Engineer</Title>
+                        <Text>Erie, CO | juanp.io | juan@juanp.io</Text>
+                    </Flex>
+                    <Divider my="sm" />
+                    <Title order={3} size="h4" sx={{ marginBottom: "1em" }}>Work Experience</Title>
+                    {jobs.map(job => (
+                        <Box key={job.company} sx={{ marginBottom: "1em" }}>
+                            <Flex direction="column" className={classes.jobContainer}>
+                                <Text>{job.company}</Text>
+                                <Text><strong>{job.title}</strong> | {job.dates}</Text>
+                                <Text>Technologies: {job.technologies}</Text>
+                                <List className={classes.jobList}>
+                                    {job.duties.map(duty => <List.Item key={duty}>{duty}</List.Item>)}
+                                </List>
+                            </Flex>
+                        </Box>
+                    ))}
+                    <Title order={3} size="h4" sx={{ margin: "1em 0" }}>Education</Title>
+                    {Schools.map(school => (
+                        <Text key={school.school} sx={{ marginLeft: '2em'}}>
+                            <strong>{school.school}</strong> - {school.degree} - Graduated {school.date}
                         </Text>
-                    </div>
-                ))}
-            </Box>
-        </Paper>
-    </Container>
-  )
+                    ))}
+                    <Title order={3} size="h4" sx={{ margin: "1em 0" }}>Volunteer work</Title>
+                    {volunteerJobs.map(job => (
+                        <div key={job.job}>
+                            <Text sx={{ margin: '0 0 1em 2em'}}>
+                                <strong>{job.job}</strong><br/>
+                                {job.title} | {job.dates}<br />
+                                {job.duties}
+                            </Text>
+                        </div>
+                    ))}
+                </Box>
+            </Paper>
+        </Container>
+    )
 }

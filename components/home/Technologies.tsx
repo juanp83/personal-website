@@ -9,7 +9,7 @@ import {
   } from '@mantine/core';
   import { IconGauge, IconUser, IconCookie } from '@tabler/icons';
   
-  const mockdata = [
+  const technologies = [
     {
         title: 'Javascript & TypeScript',
         description:
@@ -99,12 +99,16 @@ import {
     container: {
         marginTop:  theme.spacing.xl * 4,
         marginBottom:  theme.spacing.xl * 4,
+        [theme.fn.smallerThan('md')]: {
+          marginTop:  theme.spacing.xl * 2,
+          marginBottom:  theme.spacing.xl * 2,
+        },
     }
   }));
   
   export default function Technologies() {
     const { classes, theme } = useStyles();
-    const features = mockdata.map((feature) => (
+    const features = technologies.map((feature) => (
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} p="xl">
         <div style={{ display: 'flex' }}>
             <Image src={feature.icon} width={50} style={{marginRight: '.5em'}} />
@@ -129,7 +133,7 @@ import {
            I have expertise in (and lots of love for) the following technologies.
         </Text>
   
-        <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+        <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }, { maxWidth: 'md', cols: 2 }]}>
           {features}
         </SimpleGrid>
       </Container>
