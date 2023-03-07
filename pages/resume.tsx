@@ -121,7 +121,7 @@ export default function Resume() {
                     <Flex align="center" direction="column">
                         <Title order={1}>Juan Portillo</Title>
                         <Title order={2} size="h4">Frontend Software Engineer</Title>
-                        <Text>Erie, CO | juanp.io | juan@juanp.io</Text>
+                        <Text>Erie, CO | www.juanportillo.dev | contact@juanportillo.dev</Text>
                     </Flex>
                     <Divider my="sm" />
                     <Title order={3} size="h4" sx={{ marginBottom: "1em" }}>Work Experience</Title>

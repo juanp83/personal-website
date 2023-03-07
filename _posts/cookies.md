@@ -1,6 +1,6 @@
 ---
 title: 'The difference between a cookie, sessionStorage and localStorage.'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+excerpt: 'Cookies, localStorage, and sessionStorage are all ways of storing data on the client that the client can both read and modify. All of these can only store values as strings. But they have key differences.'
 coverImage: '/assets/blog/cookies/cookie.jpeg'
 date: '2023-01-02'
 ogImage:
