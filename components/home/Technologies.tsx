@@ -117,9 +117,9 @@ import {
         <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
           {feature.title}
         </Text>
-        <Text size="sm" color="dimmed" mt="sm">
+        {/* <Text size="sm" color="dimmed" mt="sm">
           {feature.description}
-        </Text>
+        </Text> */}
       </Card>
     ));
     return (
@@ -130,7 +130,7 @@ import {
         </Title>
   
         <Text color="dimmed" className={classes.description} align="center" mt="md">
-           I have expertise in (and lots of love for) the following technologies.
+           I have experience in (and lots of love for) the following technologies.
         </Text>
   
         <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }, { maxWidth: 'md', cols: 2 }]}>
