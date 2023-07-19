@@ -73,13 +73,10 @@ export default function SimpleHeader({ links }: SimpleHeaderProps) {
       key={link.label}
       href={link.link}
       passHref
-    >
-      <a
-        className={cx(classes.link, { [classes.linkActive]: active === link.link })}
+      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
         onClick={() => setActive(link.link)}
-      >
+    >
         {link.label}
-      </a>
     </Link>
   ));
 

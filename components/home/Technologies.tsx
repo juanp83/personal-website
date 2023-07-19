@@ -57,6 +57,7 @@ import {
     title: {
       fontSize: 34,
       fontWeight: 900,
+      color: '#fff',
       [theme.fn.smallerThan('sm')]: {
         fontSize: 24,
       },
@@ -65,7 +66,7 @@ import {
     description: {
       maxWidth: 600,
       margin: 'auto',
-  
+      color: '#fff',
       '&::after': {
         content: '""',
         display: 'block',

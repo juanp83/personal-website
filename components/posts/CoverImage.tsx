@@ -18,14 +18,12 @@ const CoverImage = ({ title, src, slug }: Props) => {
     <div>
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
-          <a>
             <Image
               src={src}
               alt={`Cover Image for ${title}`}
               width={800}
               height={532}
             />
-          </a>
         </Link>
       ) : (
         <Image

@@ -3,10 +3,11 @@ import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
 import SimpleHeader from '../components/SimpleHeader';
 import { FooterSocial } from '../components/FooterSocial';
+import { useEffect, useState } from 'react';
 
 const links = [
   {link: '/', label: 'Home'},
-  {link: '/blog', label: 'Blog'},
+  // {link: '/blog', label: 'Blog'},
   {link: '/resume', label: 'Resume'}
 ]
 
