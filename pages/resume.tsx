@@ -5,7 +5,7 @@ const jobs = [
     {
         company: "Discovery Genie",
         title: "Frontend Software Engineer",
-        dates: "December 2017 - Present",
+        dates: "December 2017 - August 2023",
         technologies: "Typescript, React, Redux, Material UI, Emotion, React Testing Library, Stripe",
         duties: [
             "Developed the front-end for Discovery Genie v2, utilizing React, GraphQL, and Typescript to enhance user experience, improve performance, and ensure codebase scalability.",
@@ -114,7 +114,7 @@ export default function Resume() {
                 size="lg"
                 className={classes.print}
                 variant="transparent"
-                onClick={() => window.open('/Juan Portillo - FrontEnd Engineer Resume.pdf')}
+                onClick={() => window.open('/Juan Portillo - Front-end Software Engineer v2.pdf')}
             >
                 <IconPrinter size={26} />
             </ActionIcon>
