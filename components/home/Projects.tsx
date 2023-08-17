@@ -1,4 +1,5 @@
 import {
+    Button,
     createStyles,
     Title,
     Text,
@@ -19,19 +20,18 @@ import Link from 'next/link';
               // image: {src: '/icons/js-icon.png', alt: 'Javascript Icon'},
             },
             {
+              title: 'Support Genie App',
+              url: null,
+              description: "Support Genie is an app designed to streamline administrative and support tasks as well as provide useful analytics for Discovery Genie. Whether it's managing user permissions, tracking case progress, or troubleshooting support tickets, Support Genie simplifies the process.",
+              technologies: 'React, React Router, Material UI, Styled Components, Stripe, React Testing Library',
+              // image: {src: '/icons/js-icon.png', alt: 'Javascript Icon'},
+            },
+            {
               title: 'Discovery Genie Website',
               url: 'https://www.discoverygenie.com',
               description: 'The Discovery Genie website is the entry point for users. This website is where all Discovery Genie marketing efforts point. Within the website users are able to schedule a demo of the app, sign up, and learn everything they need to know to decide whether Discovery Genie is a goot fit for their practice.',
               // image: {src: '/icons/js-icon.png', alt: 'Javascript Icon'},
             },
-            {
-              title: 'Support Genie App',
-              url: null,
-              description: "Support Genie is an app designed to streamline administrative and support tasks as well as provide useful analytics for the Discovery Genie app. Support Genie allows seamless user, firm, case, and document set administration. Whether it's managing user permissions, tracking case progress, or troubleshooting support tickets, Support Genie simplifies the entire process.",
-              technologies: 'React, React Router, Material UI, Styled Components, Stripe, React Testing Library',
-              // image: {src: '/icons/js-icon.png', alt: 'Javascript Icon'},
-            },
-            
         ],
         personal: [
             {
@@ -82,6 +82,9 @@ import Link from 'next/link';
       border: `1px solid ${
         theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1]
       }`,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between'
     },
   
     cardTitle: {
@@ -109,15 +112,22 @@ import Link from 'next/link';
     const { classes, theme } = useStyles();
     const professionalProjects = projects.professional.map((project) => (
       <Card key={project.title} shadow="md" radius="md" className={classes.card} p="xl">
-        {/* <div style={{ display: 'flex' }}>
-            <Image src={project.image.src} width={50} style={{marginRight: '.5em'}} alt={project.image.alt} />
-        </div> */}
-        <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
-          {project.title}
-        </Text>
-        <Text size="sm" mt="sm">
-          {project.description}
-        </Text>
+        <div>
+          <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
+            {project.title}
+          </Text>
+          <Text size="sm" mt="sm">
+            {project.description}
+          </Text>
+        </div>
+        {/* <Link
+          href={`/resume`}
+          passHref
+        >
+          <Button radius="xl" size="md" mt={25}>
+            Learn More
+          </Button>
+        </Link> */}
       </Card>
     ));
     const personalProjects = projects.personal.map((project) => (
@@ -141,15 +151,15 @@ import Link from 'next/link';
           Professional
         </Title>
   
-        <SimpleGrid cols={3} spacing="xl" mt={25} breakpoints={[{ maxWidth: 'sm', cols: 1 }, { maxWidth: 'md', cols: 2 }]}>
+        <SimpleGrid cols={3} spacing="xl" mt={25} mb={50}  breakpoints={[{ maxWidth: 'sm', cols: 1 }, { maxWidth: 'md', cols: 2 }]}>
           {professionalProjects}
         </SimpleGrid>
-        <Title order={2} className={classes.subTitle} align="left" mt="sm">
+        {/* <Title order={2} className={classes.subTitle} align="left" mt="sm">
           Personal & Learning
         </Title>
         <SimpleGrid cols={3} spacing="xl" mt={25} breakpoints={[{ maxWidth: 'sm', cols: 1 }, { maxWidth: 'md', cols: 2 }]}>
           {personalProjects}
-        </SimpleGrid>
+        </SimpleGrid> */}
       </Container>
     );
   }

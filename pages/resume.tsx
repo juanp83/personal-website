@@ -8,6 +8,7 @@ const jobs = [
         dates: "December 2017 - Present",
         technologies: "Typescript, React, Redux, Material UI, Emotion, React Testing Library, Stripe",
         duties: [
+            "Developed the front-end for Discovery Genie v2, utilizing React, GraphQL, and Typescript to enhance user experience, improve performance, and ensure codebase scalability.",
             "Collaborate with Product manager, DevOps and Backend Developers to bring wireframes, designs, and user stories to life.",
             "Meet with the development team on a weekly basis to discuss and troubleshoot features in the previous sprint and plan for future sprints.",
             "Design, develop, test, implement and write documentation for new and existing features.",
