@@ -114,7 +114,7 @@ export default function Resume() {
                 size="lg"
                 className={classes.print}
                 variant="transparent"
-                onClick={() => window.open('/Juan Portillo - FrontEnd Engineer Resume.pdf')}
+                onClick={() => window.open('/Juan Portillo - Front-end Software Engineer v2.pdf')}
             >
                 <IconPrinter size={26} />
             </ActionIcon>
