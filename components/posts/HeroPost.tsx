@@ -12,7 +12,7 @@ const TitleContainer = styled.div`
   align-items: center;
 `
 
-const TitleLink = styled.a`
+const TitleLink = styled.p`
   text-decoration: none;
   color: #497aab;
   cursor: pointer;
@@ -43,6 +43,7 @@ const HeroPost = ({
             <Link
               as={`/posts/${slug}`}
               href="/posts/[slug]"
+              style={{textDecoration: 'none'}}
             >
               <TitleLink>{title}</TitleLink>
             </Link>

@@ -7,7 +7,7 @@ import {
   Group,
   Text,
 } from '@mantine/core';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
@@ -15,9 +15,9 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: theme.spacing.xl * 2,
-    paddingBottom: theme.spacing.xl * 2,
-    paddingLeft: theme.spacing.xl * 2,
+    paddingTop: theme.spacing.xl * 1.5,
+    paddingBottom: theme.spacing.xl * 1.5,
+    paddingLeft: theme.spacing.xl * 1.5,
     backgroundColor: '#fff',
     position: 'relative',
     borderRadius: theme.radius.sm,
@@ -90,13 +90,13 @@ export default function Hero() {
           <Title className={classes.title}>
               Creative <span className={classes.highlight}>Front-End</span> <br />Software Engineer
           </Title>
-          <Text color="dimmed" mt="md">
+          <Text mt="md">
               My interests in science and technology have always influenced my hobbies in tinkering, building, exploring and learning about emerging discoveries.
           </Text> 
-          <Text color="dimmed" mt="md">
-              Ironically, I started my career in recruiting and HR. 🤦‍♂️ 
+          <Text mt="md">
+              Ironically, I started my career in recruiting and HR. <span style={{ fontSize: 26 }}>🤦‍♂️</span>
           </Text> 
-          <Text color="dimmed" mt="md">
+          <Text mt="md">
               Learning to code made me realize that I could merge my people focused work with my interest in tech.
               I enjoy working in a team, designing simple, elegant, responsive, and user friendly interfaces that bridge the gap between people and technology.
           </Text> 
@@ -110,14 +110,14 @@ export default function Hero() {
                 Resume
               </Button>
             </Link>
-            <Link
+            {/* <Link
               href={`/blog`}
               passHref
             >
               <Button variant="default" radius="xl" size="md" className={classes.control}>
                 Blog
               </Button>
-            </Link>
+            </Link> */}
           </Group>
         </div>
           <Image 
