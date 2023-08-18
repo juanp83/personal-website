@@ -9,15 +9,15 @@ const jobs = [
         technologies: "Typescript, React, Redux, Material UI, Emotion, React Testing Library, Stripe",
         duties: [
             "Developed the front-end for Discovery Genie v2, utilizing React, GraphQL, and Typescript to enhance user experience, improve performance, and ensure codebase scalability.",
-            "Collaborate with Product manager, DevOps and Backend Developers to bring wireframes, designs, and user stories to life.",
-            "Meet with the development team on a weekly basis to discuss and troubleshoot features in the previous sprint and plan for future sprints.",
-            "Design, develop, test, implement and write documentation for new and existing features.",
+            "Collaborated with Product manager, DevOps and Backend Developers to bring wireframes, designs, and user stories to life.",
+            "Met with the development team on a weekly basis to discuss and troubleshoot features in the previous sprint and plan for future sprints.",
+            "Designed, developed, tested, implemented and wrote documentation for new and existing features.",
             "Translated complex back-end functionality into user-friendly front-end interfaces for a seamless user experience",
-            "Develop, modify and maintain new and existing integrations.",
-            "Investigate and resolve bugs or deficiencies in codebases.",
-            "Execute marketing efforts including the development of the Discovery genie marketing website, landing pages, email newsletters, blogs, and social media accounts.",
-            "Manage on-page Search Engine Optimization efforts including maintenance of website meta-tags, alt-tags, headers, and copy.",
-            "Reduce customer support effort and time by building Support Genie, a support platform for monitoring and managing Discovery Genie user activity, accounts, and settings.",
+            "Developed, modified and maintained new and existing 3rd party API integrations, including Stripe, Clio, FastCase, and others.",
+            "Investigated and resolved bugs or deficiencies in codebases.",
+            "Executed marketing efforts including the development of the Discovery genie marketing website, landing pages, email newsletters, blogs, and social media accounts.",
+            "Managed on-page Search Engine Optimization efforts including maintenance of website meta-tags, alt-tags, headers, and copy.",
+            "Reduced customer support effort and time by building Support Genie, a support platform for monitoring and managing Discovery Genie user activity, accounts, and settings.",
         ]
     },
     {
